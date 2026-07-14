@@ -1,0 +1,12 @@
+markdown: kramdown
+theme: jekyll-theme-slate
+
+plugins:
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: true
+
+title: Methodics of Python Intro 
+description: Practical materials for learning Python
