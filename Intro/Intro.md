@@ -1,3 +1,5 @@
+[:contents:]
+
 # О курсе
 
 Курс, разработанный при поддержке компании «[BaseALT СПО](https://basealt.ru)», читает [Георгий Курячий](http://uneex.org/FrBrGeorge), ведущий разработчик компании, член [ALT Linux Team](https://www.altlinux.org/ALT_Linux_Team), преподаватель [ВМК МГУ](http://www.cs.msu.ru).
