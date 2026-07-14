@@ -25,7 +25,7 @@
 124  
 >>> a.__add__(1)  
 124  
->>>    
+>>>
 >>> int  
 <class 'int'>  
 >>> int.__add__(123, 1)  
@@ -47,8 +47,8 @@
 
 ```python
 >>> for a in (1, 2, 4):  
-...     print(a)  
-...        
+...     print(a)
+...
 1  
 2  
 4  
@@ -62,8 +62,8 @@
 
 ```python
 >>> for a, b in [[1, 2], [3, 4]]:  
-...     print(a, b)  
-...        
+...     print(a, b)
+...
 1 2  
 3 4  
 >>>
@@ -73,20 +73,20 @@
 
 ```python
 >>> for i in (1, 2, 3, 4, 5):  
-...     if i == 3:  
-...         print("TREEE")  
-...         break  
+...     if i == 3:
+...         print("TREEE")
+...         break
 ... else:  
-...     print("No 3")  
-...        
+...     print("No 3")
+...
 TREEE  
 >>> for i in (1, 2, 12, 4, 5):  
-...     if i == 3:  
-...         print("TREEE")  
-...         break  
+...     if i == 3:
+...         print("TREEE")
+...         break
 ... else:  
-...     print("No 3")  
-...        
+...     print("No 3")
+...
 No 3  
 >>>
 ```
@@ -97,8 +97,8 @@ No 3
 
 ```python
 >>> for i in "QWER":  
-...     print(i)  
-...        
+...     print(i)
+...
 Q  
 W  
 E  
@@ -186,12 +186,12 @@ True
 [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]  
 >>> 8 * s  
 [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]  
->>>    
+>>>
 >>> (8).__mul__(s)  
 NotImplemented  
 >>> s.__rmul__(8)  
 [1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3]  
->>>    
+>>>
 ```
 
  + Непосредственно `__getitem__` обеспечивает последовательности возможностью _индексирования_:
@@ -199,7 +199,7 @@ NotImplemented
 ```python
 >>> s[2]  
 3  
->>>    
+>>>
 ```
 
  + Однако куда более важное свойство, наделяемое благодаря `__getitem__` — _секционирование_. Это выделение подпоследовательностей форматом `начало:конец:шаг`. Секционирование поддерживает обработку значений по умолчанию, отрицательные значения, несуществующие диапазоны:
@@ -224,7 +224,7 @@ NotImplemented
 [1, 2, 3]  
 >>> id(s), id(s[:])  
 (140601713258560, 140601713211136)  
->>>    
+>>>
 >>> a = s  
 >>> b = s[:]  
 >>> a is s  
@@ -269,9 +269,9 @@ False
 
 ```python
 >>> class C:  
-...     def __getitem__(self, arg):  
-...         return arg  
-...            
+...     def __getitem__(self, arg):
+...         return arg
+...
 >>> c = C()  
 >>> res = c[123:1:1000]  
 >>> res  
@@ -310,9 +310,9 @@ slice(123, 1, 1000)
 
 >>> s[3:8:2] = [666, 13, 228, 1337]  
 Traceback (most recent call last):  
- File "<python-input-99>", line 1, in <module>  
-   s[3:8:2] = [666, 13, 228, 1337]  
-   ~^^^^^^^  
+ File "<python-input-99>", line 1, in <module>
+   s[3:8:2] = [666, 13, 228, 1337]
+   ~^^^^^^^
 ValueError: attempt to assign sequence of size 4 to extended slice of size 3  
 >>> s[3:8:2] = [666, 13, 228]  
 >>> s  
@@ -417,7 +417,7 @@ True
 [3, 2, 100500]  
 >>> id(a)  
 140601713139904  
->>>    
+>>>
 ```
 
 \* Для сортировки и разворота последовательностей существуют и внешние функции, но они работают своеобразно (как — будет рассказано в будущих главах):
@@ -437,8 +437,8 @@ True
 ```python
 >>> 0 <'r'  
 Traceback (most recent call last):  
- File "<python-input-143>", line 1, in <module>  
-   0 <'r'  
+ File "<python-input-143>", line 1, in <module>
+   0 <'r'
 TypeError: '<' not supported between instances of 'int' and 'str'  
 >>> a == 'r'  
 False  
@@ -448,8 +448,8 @@ True
 >>> a, b = ["wer", 1], [3, 4]  
 >>> a < b  
 Traceback (most recent call last):  
- File "<python-input-148>", line 1, in <module>  
-   a < b  
+ File "<python-input-148>", line 1, in <module>
+   a < b
 TypeError: '<' not supported between instances of 'str' and 'int'  
 >>>
 ```
@@ -495,8 +495,8 @@ range(4, 22, 6)
 
 ```python
 >>> for i in range(len(s := "qwertyuiolk,mnbgfd")):  
-...     print(i, s[i])  
-...        
+...     print(i, s[i])
+...
 0 q  
 1 w  
 2 e  
@@ -522,8 +522,8 @@ range(4, 22, 6)
 
 ```python
 >>> for i, k in enumerate("qwertyuiolk,mnbgfd"):  
-...     print(i, k)  
-...        
+...     print(i, k)
+...
 0 q  
 1 w  
 2 e  

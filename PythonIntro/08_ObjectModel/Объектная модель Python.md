@@ -63,14 +63,14 @@ b'\x01\xe2@'
 ```python
 >>> a.numerator = 123  
 Traceback (most recent call last):  
- File "<python-input-12>", line 1, in <module>  
-   a.numerator = 123  
-   ^^^^^^^^^^^  
+ File "<python-input-12>", line 1, in <module>
+   a.numerator = 123
+   ^^^^^^^^^^^
 AttributeError: attribute 'numerator' of 'int' objects is not writable  
 
 >>> class C:  
-...     pass  
-...        
+...     pass
+...
 >>> dir(C)  
 ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__firstlineno__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__static_attributes__', '__str__', '__subclasshook__', '__weakref__']  
 ```
@@ -100,8 +100,8 @@ AttributeError: attribute 'numerator' of 'int' objects is not writable
 
 ```python
 >>> def ddir(obj):  
-...     return [c for c in dir(obj) if not c.startswith('__')]  
-...        
+...     return [c for c in dir(obj) if not c.startswith('__')]
+...
 >>>
 ```
 
@@ -156,13 +156,13 @@ AttributeError: attribute 'numerator' of 'int' objects is not writable
 >>> del C.qwer  
 >>> C.qwer  
 Traceback (most recent call last):  
- File "<python-input-55>", line 1, in <module>  
-   C.qwer  
+ File "<python-input-55>", line 1, in <module>
+   C.qwer
 AttributeError: type object 'C' has no attribute 'qwer'  
 >>> c.qwer  
 Traceback (most recent call last):  
- File "<python-input-56>", line 1, in <module>  
-   c.qwer  
+ File "<python-input-56>", line 1, in <module>
+   c.qwer
 AttributeError: 'C' object has no attribute 'qwer'  
 >>>
 ```
@@ -171,8 +171,8 @@ AttributeError: 'C' object has no attribute 'qwer'
 
 ```python
 >>> class D:  
-...     dct = [1, 2, 3]  
-...        
+...     dct = [1, 2, 3]
+...
 >>> d = D()  
 >>> d.dct.append(100500)  
 >>> D.dct  
@@ -184,9 +184,9 @@ AttributeError: 'C' object has no attribute 'qwer'
 
 ```python
 >>> class D:  
-...     a = 10  
-...     b = 20  
-...        
+...     a = 10
+...     b = 20
+...
 >>> d = D()  
 >>> d.a  
 10  
@@ -202,11 +202,11 @@ AttributeError: 'C' object has no attribute 'qwer'
 
 ```python
 >>> class D:  
-...     a = 10  
-...     b = 20  
-...     def meth(*args):  
-...         print("@@", *args)  
-...            
+...     a = 10
+...     b = 20
+...     def meth(*args):
+...         print("@@", *args)
+...
 >>> ddir(D)  
 ['a', 'b', 'meth']  
 
@@ -228,13 +228,13 @@ AttributeError: 'C' object has no attribute 'qwer'
 <class 'method'>  
 >>> callable(d.meth)  
 True  
->>> # А теперь вызовем и получим что-то новое: добавляется нулевой параметр с самим собой    
+>>> # А теперь вызовем и получим что-то новое: добавляется нулевой параметр с самим собой
 >>> d.meth(1, 2, 3)  
 @@ <__main__.D object at 0x7f81a4039160> 1 2 3  
 >>> d  
 <__main__.D object at 0x7f81a4039160>  
->>>    
->>>    
+>>>
+>>>
 >>>
 ```
 
@@ -242,10 +242,10 @@ True
 
 ```python
 >>> class D:  
-...     x = 0  
-...     def append(self, num):  
-...         self.x += num  
-...            
+...     x = 0
+...     def append(self, num):
+...         self.x += num
+...
 >>> d = D()  
 >>> d.x  
 0  
@@ -262,12 +262,12 @@ True
 
 ```python
 >>> class Num:  
-...     num = 0  
-...     def add(self, el):  
-...         self.num += el  
-...     def __str__(self):  
-...         return f'<{self.num}>'  
-...            
+...     num = 0
+...     def add(self, el):
+...         self.num += el
+...     def __str__(self):
+...         return f'<{self.num}>'
+...
 >>> n = Num()  
 >>> Num  
 <class '__main__.Num'>  
@@ -288,11 +288,11 @@ True
 
 ```python
 >>> class D:  
-...     def __init__(self, val):  
-...         self.num = val  
-...     def __str__(self):  
-...         return f'<{self.num}>'  
-...            
+...     def __init__(self, val):
+...         self.num = val
+...     def __str__(self):
+...         return f'<{self.num}>'
+...
 >>> ddir(D)  
 []  
 >>> d = D(123)  
@@ -307,14 +307,14 @@ True
 
 ```python
 >>> class A:  
-...     def __str__(self):  
-...         return "QKRQ"  
-...            
+...     def __str__(self):
+...         return "QKRQ"
+...
 >>> a = A()  
 >>> print(a)  
 QKRQ  
 
->>> a.__str__ = lambda self: "QQ"    
+>>> a.__str__ = lambda self: "QQ"
 >>> print(a)  
 QKRQ  
 
@@ -344,11 +344,11 @@ QKRQ
 
 ```python
 >>> class D:  
-...     count = 0  
-...     def __getattr__(self, attr):  
-...         self.count += 1  
-...         return self.count  
-...            
+...     count = 0
+...     def __getattr__(self, attr):
+...         self.count += 1
+...         return self.count
+...
 >>> d = D()  
 >>> d.wer  
 1  
@@ -363,26 +363,26 @@ QKRQ
 
 ```python
 >>> class D:  
-...     count = 0  
-...     def __getattribute__(self, attr):  
-...         self.count += 1  
-...         return self.count  
-...            
+...     count = 0
+...     def __getattribute__(self, attr):
+...         self.count += 1
+...         return self.count
+...
 >>> d = D()  
 >>> d.wer  
 Traceback (most recent call last):  
- File "<python-input-74>", line 1, in <module>  
-   d.wer  
- File "<python-input-72>", line 4, in __getattribute__  
-   self.count += 1  
-   ^^^^^^^^^^  
- File "<python-input-72>", line 4, in __getattribute__  
-   self.count += 1  
-   ^^^^^^^^^^  
- File "<python-input-72>", line 4, in __getattribute__  
-   self.count += 1  
-   ^^^^^^^^^^  
- [Previous line repeated 988 more times]  
+ File "<python-input-74>", line 1, in <module>
+   d.wer
+ File "<python-input-72>", line 4, in __getattribute__
+   self.count += 1
+   ^^^^^^^^^^
+ File "<python-input-72>", line 4, in __getattribute__
+   self.count += 1
+   ^^^^^^^^^^
+ File "<python-input-72>", line 4, in __getattribute__
+   self.count += 1
+   ^^^^^^^^^^
+ [Previous line repeated 988 more times]
 RecursionError: maximum recursion depth exceeded  
 ```
 
@@ -406,17 +406,17 @@ QQ
 ```
 ```python
 >>> class C:  
-...     def __len__(self):  
-...         return 42  
-...            
+...     def __len__(self):
+...         return 42
+...
 >>> len(C())  
 42  
 ```
 ```python
 >>> class C:  
-...     def __abs__(self):  
-...         return int(a > b)  
-...            
+...     def __abs__(self):
+...         return int(a > b)
+...
 >>> c = C()  
 >>> a, b = 1, 0  
 >>> abs(c)  
@@ -427,35 +427,35 @@ QQ
 ```
 ```python
 >>> class C:  
-...     def __bool__(self):  
-...         return True if self.a > 0 else False  
-...            
+...     def __bool__(self):
+...         return True if self.a > 0 else False
+...
 >>> c = C()  
 >>> c.a = -4  
 >>> if c:  
-...     print('QQ')  
+...     print('QQ')
 ... else:  
-...     print('neQQ')  
-...        
+...     print('neQQ')
+...
 neQQ  
 >>>
 ```
 ```python
 >>> class C:  
-...     def __iter__(self):  
-...         return iter("qwerty")  
-...            
+...     def __iter__(self):
+...         return iter("qwerty")
+...
 >>> list(C())  
 ['q', 'w', 'e', 'r', 't', 'y']  
->>>    
+>>>
 ```
 ```python
 >>> class C:  
-...     def __getitem__(self, idx):  
-...         return ('Good!')[idx]  
-...     def __call__(self):  
-...         return ''.join(self[i] for i in range(1, 4))  
-...            
+...     def __getitem__(self, idx):
+...         return ('Good!')[idx]
+...     def __call__(self):
+...         return ''.join(self[i] for i in range(1, 4))
+...
 >>> c = C()  
 >>> c[0]  
 'G'  

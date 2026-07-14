@@ -22,8 +22,8 @@
 
 ```python
 >>> def addmul(a, b):  
-...     return a + b * 2  
-...        
+...     return a + b * 2
+...
 >>> addmul("qwer", "ty")  
 'qwertyty'  
 >>> addmul(2, 3)  
